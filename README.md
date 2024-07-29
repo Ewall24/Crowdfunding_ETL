@@ -38,15 +38,46 @@ The instructions for this mini project are divided into the following subsection
 
     Extract and transform the crowdfunding.xlsx Excel data to create a category DataFrame that has the following columns:
 
+           
+ # Read the data into a Pandas DataFrame
+
+     crowdfunding_info_df = pd.read_excel('Resources/crowdfunding.xlsx')
+     crowdfunding_info_df.head()
+
         A "category_id" column that has entries going sequentially from "cat1" to "catn", where n is the number of unique categories
 
-        A "category" column that contains only the category titles
+   # Get the crowdfunding_info_df columns.
 
-        The following image shows this category DataFrame:
+     crowdfunding_info_df.columns     
+        
+       
+        
+A "category" column that contains only the category titles
 
-        category DataFrame
+ # Assign the category and subcategory values to category and subcategory columns.
+
+   crowdfunding_info_df[['category', 'subcategory']] = crowdfunding_info_df['category & sub-category'].str.split('/',     expand=True)
+
+  crowdfunding_info_df.head()
+
+
+
+        The following image shows this category DataFrame: 
+
+        
+
+        category DataFrame 
+
+
+        # Get the unique categories and subcategories in separate lists.
+categories = crowdfunding_info_df['category'].unique().tolist()
+subcategories = crowdfunding_info_df['subcategory'].unique().tolist()
+
+print(categories)
 
     Export the category DataFrame as category.csv and save it to your GitHub repository.
+
+
 
     Extract and transform the crowdfunding.xlsx Excel data to create a subcategory DataFrame that has the following columns:
 
