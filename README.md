@@ -42,6 +42,9 @@ crowdfunding_info_df.info()
 
     Extract and transform the crowdfunding.xlsx Excel data to create a category DataFrame that has the following columns:
 
+
+
+
         A "category_id" column that has entries going sequentially from "cat1" to "catn", where n is the number of unique categories
 
         A "category" column that contains only the category titles
@@ -54,8 +57,19 @@ category_df.to_csv("Resources/category.csv", index=False)
 subcategory_df.to_csv("Resources/subcategory.csv", index=False)
            
  
+	A "category_id" column that has entries going sequentially from "cat1" to "catn", where n is the number of unique categories  
+# Get the unique categories and subcategories in separate lists.
+categories = crowdfunding_info_df['category'].unique().tolist()
+subcategories = crowdfunding_info_df['subcategory'].unique().tolist()
 
-        A "category_id" column that has entries going sequentially from "cat1" to "catn", where n is the number of unique categories
+print(categories)
+print(subcategories)
+
+print(categories)
+print(subcategories)
+
+
+ 
 
    # Get the crowdfunding_info_df columns.
 
@@ -64,6 +78,9 @@ subcategory_df.to_csv("Resources/subcategory.csv", index=False)
        
         
 A "category" column that contains only the category titles
+
+
+
 
  # Assign the category and subcategory values to category and subcategory columns.
 
