@@ -34,7 +34,7 @@ The instructions for this mini project are divided into the following subsection
 
     Export the subcategory DataFrame as subcategory.csv and save it to your GitHub repository. 
 
-    ### Create the Category and Subcategory DataFrames
+### Create the Category and Subcategory DataFrames
 
     Extract and transform the crowdfunding.xlsx Excel data to create a category DataFrame that has the following columns:
 
@@ -60,7 +60,7 @@ The instructions for this mini project are divided into the following subsection
 
     Export the subcategory DataFrame as subcategory.csv and save it to your GitHub repository. 
 
-    ### Create the Contacts DataFrame
+### Create the Contacts DataFrame
 
     Choose one of the following two options for extracting and transforming the data from the contacts.xlsx Excel data:
 
