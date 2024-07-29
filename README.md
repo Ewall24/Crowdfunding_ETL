@@ -168,19 +168,55 @@ subcategory_df.to_csv("Resources/subcategory.csv", index=False)
 
         Option 1: Use Python dictionary methods.
 
-        Option 2: Use regular expressions.
-
-    If you chose Option 1, complete the following steps:
-        Import the contacts.xlsx file into a DataFrame.
-
+       complete the following steps:
         
-        Iterate through the DataFrame, converting each row to a dictionary.
-        Iterate through each dictionary, doing the following:
+    Import the contacts.xlsx file into a DataFrame.
+    
+  # Read the data into a Pandas DataFrame
+crowdfunding_info_df = pd.read_excel('Resources/crowdfunding.xlsx')
+crowdfunding_info_df.head()    
+
+# Get a brief summary of the crowdfunding_info Dataframe
+crowdfunding_info_df.info() 
+
+
+
+	Iterate through the DataFrame, converting each row to a dictionary. 
+
+ 
+        
+	Iterate through each dictionary, doing the following:
             Extract the dictionary values from the keys by using a Python list comprehension.
-            Add the values for each row to a new list.
-        Create a new DataFrame that contains the extracted data.
+            
+	    Add the values for each row to a new list.
+        
+	Create a new DataFrame that contains the extracted data.
+	
+ 
         Split each "name" column value into a first and last name, and place each in a new column.
-        Clean and export the DataFrame as contacts.csv and save it to your GitHub repository.
+# Assign the category and subcategory values to category and subcategory columns.
+crowdfunding_info_df[['category', 'subcategory']] = crowdfunding_info_df['category & sub-category'].str.split('/', expand=True)
+
+crowdfunding_info_df.head()  
+
+    Clean and export the DataFrame as contacts.csv and save it to your GitHub repository.
+# Export the DataFrame as a CSV file. 
+campaign_cleaned.to_csv("Resources/campaign.csv", index=False) 
+
+
+# Iterate through the contact_info_df and convert each row to a dictionary.
+import json
+dict_values = []
+
+# Iterate through the DataFrame and convert each row to a dictionary
+dict_values = [json.loads(row) for row in contact_info_df['contact_info']]
+
+# Print out the list of values for each row.
+print(dict_values[0:10])
+# Print out the list of values for each row.
+print(dict_values)
+
+
 
 ### Check that your final DataFrame resembles the one in the following image:
 
@@ -316,6 +352,6 @@ FROM campaign;
 
 
 
-Verify that each table has the correct data by running a SELECT statement for each.
+
 
 
