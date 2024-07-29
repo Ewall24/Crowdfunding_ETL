@@ -19,16 +19,24 @@ subcategory_df = subcategory_df[['subcategory_id', 'subcategory']]
 category_df
     
     Create the Campaign DataFrame
-
-
+# Create a copy of the crowdfunding_info_df DataFrame name campaign_df. 
+campaign_df = crowdfunding_info_df.copy()
+campaign_df.head()
     
     Create the Contacts DataFrame
-
+# Read the data into a Pandas DataFrame. Use the `header=2` parameter when reading in the data.
+contact_info_df = pd.read_excel('Resources/contacts.xlsx', header=3)
+contact_info_df_copy = contact_info_df.copy()
+contact_info_df.head()
 
     
     Create the Crowdfunding Database
+# Read the data into a Pandas DataFrame
+crowdfunding_info_df = pd.read_excel('Resources/crowdfunding.xlsx')
+crowdfunding_info_df.head()
 
-    
+ # Get a brief summary of the crowdfunding_info Dataframe
+crowdfunding_info_df.info()   
 
 ### Create the Category and Subcategory DataFrames
 
