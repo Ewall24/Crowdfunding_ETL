@@ -53,10 +53,7 @@ category_df.to_csv("Resources/category.csv", index=False)
 
 subcategory_df.to_csv("Resources/subcategory.csv", index=False)
            
- # Read the data into a Pandas DataFrame
-
-     crowdfunding_info_df = pd.read_excel('Resources/crowdfunding.xlsx')
-     crowdfunding_info_df.head()
+ 
 
         A "category_id" column that has entries going sequentially from "cat1" to "catn", where n is the number of unique categories
 
