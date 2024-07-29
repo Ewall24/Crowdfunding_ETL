@@ -182,22 +182,47 @@ crowdfunding_info_df.info()
 
 
 	Iterate through the DataFrame, converting each row to a dictionary. 
+# Iterate through the DataFrame and convert each row to a dictionary
+dict_values = [json.loads(row) for row in contact_info_df['contact_info']]
 
+
+    # Iterate through the contact_info_df and convert each row to a dictionary.
+# Iterate through the contact_info_df and convert each row to a dictionary.
+import json
+dict_values = []
+
+# Iterate through the DataFrame and convert each row to a dictionary
+dict_values = [json.loads(row) for row in contact_info_df['contact_info']]
+
+# Print out the list of values for each row.
+print(dict_values[0:10])
+# Print out the list of values for each row.
+print(dict_values)
  
         
 	Iterate through each dictionary, doing the following:
             Extract the dictionary values from the keys by using a Python list comprehension.
-            
-	    Add the values for each row to a new list.
+             Add the values for each row to a new list.
         
 	Create a new DataFrame that contains the extracted data.
-	
+
+ # Create a contact_info DataFrame and add each list of values, i.e., each row 
+# to the 'contact_id', 'name', 'email' columns.
+contact_info_df = pd.DataFrame(dict_values, columns=['contact_id', 'name', 'email'])
+
+contact_info_df.head(10)  
+
+# Check the datatypes.
+contact_info_df.info()
+
  
         Split each "name" column value into a first and last name, and place each in a new column.
 # Assign the category and subcategory values to category and subcategory columns.
 crowdfunding_info_df[['category', 'subcategory']] = crowdfunding_info_df['category & sub-category'].str.split('/', expand=True)
 
 crowdfunding_info_df.head()  
+
+
 
     Clean and export the DataFrame as contacts.csv and save it to your GitHub repository.
 # Export the DataFrame as a CSV file. 
