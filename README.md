@@ -77,6 +77,11 @@ print(categories)
 
     Export the category DataFrame as category.csv and save it to your GitHub repository.
 
+# Export categories_df and subcategories_df as CSV files.
+
+   category_df.to_csv("Resources/category.csv", index=False)
+
+   subcategory_df.to_csv("Resources/subcategory.csv", index=False)
 
 
     Extract and transform the crowdfunding.xlsx Excel data to create a subcategory DataFrame that has the following columns:
