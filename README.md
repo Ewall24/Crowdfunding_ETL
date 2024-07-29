@@ -206,13 +206,115 @@ Note: Remember to specify the data types, primary keys, foreign keys, and other 
 
 Save the database schema as a Postgres file named crowdfunding_db_schema.sql, and save it to your GitHub repository.
 
+https://github.com/Ewall24/Crowdfunding_ETL/blob/main/Crowdfunding_DB_Schema.sql
+
 Create a new Postgres database, named crowdfunding_db.
 
+
 Using the database schema, create the tables in the correct order to handle the foreign keys.
-
-Verify the table creation by running a SELECT statement for each table.
-
 Import each CSV file into its corresponding SQL table.
+Verify that each table has the correct data by running a SELECT statement for each.
+
+
+CREATE TABLE "category" (
+    "category_id" VARCHAR(50) NOT NULL,
+    "category" VARCHAR(50) NOT NULL,
+    CONSTRAINT "pk_category" PRIMARY KEY ("category_id")
+);
+CREATE TABLE "subcategory" (
+    "subcategory_id" VARCHAR(50) NOT NULL,
+    "subcategory" VARCHAR(50) NOT NULL,
+    CONSTRAINT "pk_subcategory" PRIMARY KEY ("subcategory_id")
+);
+CREATE TABLE "contacts" (
+    "contact_id" INT NOT NULL,
+    "first_name" VARCHAR(50) NOT NULL,
+    "last_name" VARCHAR(50) NOT NULL,
+    "email" VARCHAR(50) NOT NULL,
+    CONSTRAINT "pk_contacts" PRIMARY KEY ("contact_id")
+);
+CREATE TABLE "campaign" (
+    "cf_id" INT NOT NULL,
+    "contact_id" INT NOT NULL,
+    "company_name" VARCHAR(50) NOT NULL,
+    "description" TEXT NOT NULL,
+    "goal" FLOAT NOT NULL,
+    "pledged" FLOAT NOT NULL,
+    "outcome" VARCHAR(50) NOT NULL,
+    "backers_count" INT NOT NULL,
+    "country" VARCHAR(50) NOT NULL,
+    "currency" VARCHAR(50) NOT NULL,
+    "launched_date" DATE NOT NULL,
+    "end_date" DATE NOT NULL,
+    "category_id" VARCHAR(50) NOT NULL,
+    "subcategory_id" VARCHAR(50) NOT NULL,
+    CONSTRAINT "pk_campaign" PRIMARY KEY ("cf_id")
+);
+
+Verify the table creation by running a SELECT statement for each table. 
+
+DROP TABLE IF EXISTS category;
+CREATE TABLE category(
+    category_id VARCHAR(50) PRIMARY KEY,
+    category VARCHAR(50) NOT NULL
+);
+SELECT *
+FROM category;  
+
+
+![image](https://github.com/user-attachments/assets/f01d4166-d9ca-4f34-8f85-91a9b7ba9551)
+
+DROP TABLE IF EXISTS subcategory;
+CREATE TABLE subcategory(
+    subcategory_id VARCHAR(50) PRIMARY KEY,
+    subcategory VARCHAR(50) NOT NULL
+);
+SELECT *
+FROM subcategory;  
+
+
+![image](https://github.com/user-attachments/assets/f21b2de4-96c5-4022-a835-8016774f3413)
+
+
+DROP TABLE IF EXISTS contacts;
+CREATE TABLE contacts(
+    contact_id INT PRIMARY KEY,
+    first_name VARCHAR(50) NOT NULL,
+    last_name VARCHAR(50) NOT NULL,
+    email VARCHAR(50) NOT NULL
+);
+SELECT *
+FROM contacts; 
+
+
+
+![image](https://github.com/user-attachments/assets/78d17f36-b6cb-43c2-bb16-4d2f0db9b8fc)
+
+
+DROP TABLE IF EXISTS campaign;
+CREATE TABLE campaign(
+    cf_id INT PRIMARY KEY,
+    contact_id INT NOT NULL,
+    company_name VARCHAR(50) NOT NULL,
+    description TEXT NOT NULL,
+    goal FLOAT NOT NULL,
+    pledged FLOAT NOT NULL,
+    outcome VARCHAR(50) NOT NULL,
+    backers_count INT NOT NULL,
+    country VARCHAR(50) NOT NULL,
+    currency VARCHAR(50) NOT NULL,
+    launched_date DATE NOT NULL,
+    end_date DATE NOT NULL,
+    category_id VARCHAR(50) NOT NULL,
+    subcategory_id VARCHAR(50) NOT NULL
+);
+SELECT *
+FROM campaign; 
+
+
+![image](https://github.com/user-attachments/assets/beec6323-ec0b-47c7-a0bb-6e25c521657f)
+
+
 
 Verify that each table has the correct data by running a SELECT statement for each.
 
