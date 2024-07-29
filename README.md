@@ -81,9 +81,17 @@ The instructions for this mini project are divided into the following subsection
 ### Check that your final DataFrame resembles the one in the following image:
 
 
+
+
+
+
 ### Create the Crowdfunding Database
 
     Inspect the four CSV files, and then sketch an ERD of the tables by using QuickDBD 
+
+
+
+
 
 Links to an external site..
 
