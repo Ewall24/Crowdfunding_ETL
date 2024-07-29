@@ -46,24 +46,12 @@ crowdfunding_info_df.info()
 
         A "category" column that contains only the category titles
 
-        The following image shows this category DataFrame:
-
-        category DataFrame
-
-    Export the category DataFrame as category.csv and save it to your GitHub repository. 
+        Export the category DataFrame as category.csv and save it to your GitHub repository. 
 
 # Export categories_df and subcategories_df as CSV files.
 category_df.to_csv("Resources/category.csv", index=False)
 
 subcategory_df.to_csv("Resources/subcategory.csv", index=False)
-
-
-
-    
-
-    
-    
-
            
  # Read the data into a Pandas DataFrame
 
