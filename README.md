@@ -89,7 +89,7 @@ The instructions for this mini project are divided into the following subsection
 
     Inspect the four CSV files, and then sketch an ERD of the tables by using QuickDBD 
 
-
+<img width="942" src="" />
 
 
 
