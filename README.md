@@ -4,9 +4,30 @@
 The instructions for this mini project are divided into the following subsections:
 
     Create the Category and Subcategory DataFrames
+    
+   # Create a category DataFrame with the category_id array as the category_id and categories list as the category name.
+category_df = pd.DataFrame({'category': categories})
+category_df['category_id'] = ['cat' + str(i+1) for i in range(len(cat_ids))]
+category_df = category_df[['category_id', 'category']]
+
+# Create a category DataFrame with the subcategory_id array as the subcategory_id and subcategories list as the subcategory name. 
+subcategory_df = pd.DataFrame({'subcategory': subcategories})
+subcategory_df['subcategory_id'] = ['subcat' + str(i+1) for i in range(len(scat_ids))]
+subcategory_df = subcategory_df[['subcategory_id', 'subcategory']]
+
+category_df
+    
     Create the Campaign DataFrame
+
+
+    
     Create the Contacts DataFrame
+
+
+    
     Create the Crowdfunding Database
+
+    
 
 ### Create the Category and Subcategory DataFrames
 
@@ -20,23 +41,19 @@ The instructions for this mini project are divided into the following subsection
 
         category DataFrame
 
-    Export the category DataFrame as category.csv and save it to your GitHub repository.
+    Export the category DataFrame as category.csv and save it to your GitHub repository. 
 
-    Extract and transform the crowdfunding.xlsx Excel data to create a subcategory DataFrame that has the following columns:
+# Export categories_df and subcategories_df as CSV files.
+category_df.to_csv("Resources/category.csv", index=False)
 
-        A "subcategory_id" column that has entries going sequentially from "subcat1" to "subcatn", where n is the number of unique subcategories
+subcategory_df.to_csv("Resources/subcategory.csv", index=False)
 
-        A "subcategory" column that contains only the subcategory titles
 
-        The following image shows this subcategory DataFrame:
 
-        subcategory DataFrame
+    
 
-    Export the subcategory DataFrame as subcategory.csv and save it to your GitHub repository. 
-
-### Create the Category and Subcategory DataFrames
-
-    Extract and transform the crowdfunding.xlsx Excel data to create a category DataFrame that has the following columns:
+    
+    
 
            
  # Read the data into a Pandas DataFrame
@@ -60,15 +77,6 @@ A "category" column that contains only the category titles
 
   crowdfunding_info_df.head()
 
-
-
-        The following image shows this category DataFrame: 
-
-        
-
-        category DataFrame 
-
-
         # Get the unique categories and subcategories in separate lists.
 categories = crowdfunding_info_df['category'].unique().tolist()
 subcategories = crowdfunding_info_df['subcategory'].unique().tolist()
@@ -88,13 +96,71 @@ print(categories)
 
         A "subcategory_id" column that has entries going sequentially from "subcat1" to "subcatn", where n is the number of unique subcategories
 
+# Create a category DataFrame with the category_id array as the category_id and categories list as the category name.
+category_df = pd.DataFrame({'category': categories})
+category_df['category_id'] = ['cat' + str(i+1) for i in range(len(cat_ids))]
+category_df = category_df[['category_id', 'category']] 
+
+
+# Create a category DataFrame with the subcategory_id array as the subcategory_id and subcategories list as the subcategory name. 
+subcategory_df = pd.DataFrame({'subcategory': subcategories})
+subcategory_df['subcategory_id'] = ['subcat' + str(i+1) for i in range(len(scat_ids))]
+subcategory_df = subcategory_df[['subcategory_id', 'subcategory']]
+
+category_df 
+
+
+	category_id	category
+0	cat1	food
+1	cat2	music
+2	cat3	technology
+3	cat4	theater
+4	cat5	film & video
+5	cat6	publishing
+6	cat7	games
+7	cat8	photography
+8	cat9	journalism
+
+
         A "subcategory" column that contains only the subcategory titles
 
-        The following image shows this subcategory DataFrame:
+subcategory_df 
 
-        subcategory DataFrame
+	subcategory_id	subcategory
+0	subcat1	food trucks
+1	subcat2	rock
+2	subcat3	web
+3	subcat4	plays
+4	subcat5	documentary
+5	subcat6	electric music
+6	subcat7	drama
+7	subcat8	indie rock
+8	subcat9	wearables
+9	subcat10	nonfiction
+10	subcat11	animation
+11	subcat12	video games
+12	subcat13	shorts
+13	subcat14	fiction
+14	subcat15	photography books
+15	subcat16	radio & podcasts
+16	subcat17	metal
+17	subcat18	jazz
+18	subcat19	translations
+19	subcat20	television
+20	subcat21	mobile games
+21	subcat22	world music
+22	subcat23	science fiction
+23	subcat24	audio
 
-    Export the subcategory DataFrame as subcategory.csv and save it to your GitHub repository. 
+
+    Export the subcategory DataFrame as subcategory.csv and save it to your GitHub repository.  
+
+# Export categories_df and subcategories_df as CSV files.
+category_df.to_csv("Resources/category.csv", index=False)
+
+subcategory_df.to_csv("Resources/subcategory.csv", index=False)
+    
+
 
 ### Create the Contacts DataFrame
 
@@ -106,6 +172,8 @@ print(categories)
 
     If you chose Option 1, complete the following steps:
         Import the contacts.xlsx file into a DataFrame.
+
+        
         Iterate through the DataFrame, converting each row to a dictionary.
         Iterate through each dictionary, doing the following:
             Extract the dictionary values from the keys by using a Python list comprehension.
