@@ -80,6 +80,7 @@ The instructions for this mini project are divided into the following subsection
 
 ### Check that your final DataFrame resembles the one in the following image:
 
+![image](https://github.com/user-attachments/assets/63772c52-4077-4c28-af15-5a82fb548001)
 
 
 
