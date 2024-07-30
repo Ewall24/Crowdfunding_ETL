@@ -390,7 +390,7 @@ FROM campaign;
 ## Collaboration  
 Omid Khan - omidk414@gmail.com - omidk414  
 Gursimran Kaur - kaursimran081999@gmail.com - SimranBoparai 
-Rinal Shastri - 
+Rinal Shastri -  rinal.shastri@outlook.com - rinals
 
 
 
