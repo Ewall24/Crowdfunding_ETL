@@ -387,6 +387,10 @@ FROM campaign;
 ![image](https://github.com/user-attachments/assets/beec6323-ec0b-47c7-a0bb-6e25c521657f)
 
 
+## Collaboration  
+Omid Khan - omidk414@gmail.com - omidk414  
+Gursimran Kaur - kaursimran081999@gmail.com - SimranBoparai 
+Rinal Shastri - 
 
 
 
