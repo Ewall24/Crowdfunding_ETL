@@ -1,3 +1,4 @@
+
 # Crowdfunding_ETL
 ## Instructions
 
@@ -18,50 +19,57 @@ subcategory_df = subcategory_df[['subcategory_id', 'subcategory']]
 category_df
     
     Create the Campaign DataFrame
-
-
+# Create a copy of the crowdfunding_info_df DataFrame name campaign_df. 
+campaign_df = crowdfunding_info_df.copy()
+campaign_df.head()
     
     Create the Contacts DataFrame
-
+# Read the data into a Pandas DataFrame. Use the `header=2` parameter when reading in the data.
+contact_info_df = pd.read_excel('Resources/contacts.xlsx', header=3)
+contact_info_df_copy = contact_info_df.copy()
+contact_info_df.head()
 
     
     Create the Crowdfunding Database
+# Read the data into a Pandas DataFrame
+crowdfunding_info_df = pd.read_excel('Resources/crowdfunding.xlsx')
+crowdfunding_info_df.head()
 
-    
+ # Get a brief summary of the crowdfunding_info Dataframe
+crowdfunding_info_df.info()   
 
 ### Create the Category and Subcategory DataFrames
 
     Extract and transform the crowdfunding.xlsx Excel data to create a category DataFrame that has the following columns:
 
+
+
+
         A "category_id" column that has entries going sequentially from "cat1" to "catn", where n is the number of unique categories
 
         A "category" column that contains only the category titles
 
-        The following image shows this category DataFrame:
-
-        category DataFrame
-
-    Export the category DataFrame as category.csv and save it to your GitHub repository. 
+        Export the category DataFrame as category.csv and save it to your GitHub repository. 
 
 # Export categories_df and subcategories_df as CSV files.
 category_df.to_csv("Resources/category.csv", index=False)
 
 subcategory_df.to_csv("Resources/subcategory.csv", index=False)
-
-
-
-    
-
-    
-    
-
            
- # Read the data into a Pandas DataFrame
+ 
+	A "category_id" column that has entries going sequentially from "cat1" to "catn", where n is the number of unique categories  
+# Get the unique categories and subcategories in separate lists.
+categories = crowdfunding_info_df['category'].unique().tolist()
+subcategories = crowdfunding_info_df['subcategory'].unique().tolist()
 
-     crowdfunding_info_df = pd.read_excel('Resources/crowdfunding.xlsx')
-     crowdfunding_info_df.head()
+print(categories)
+print(subcategories)
 
-        A "category_id" column that has entries going sequentially from "cat1" to "catn", where n is the number of unique categories
+print(categories)
+print(subcategories)
+
+
+ 
 
    # Get the crowdfunding_info_df columns.
 
@@ -70,6 +78,9 @@ subcategory_df.to_csv("Resources/subcategory.csv", index=False)
        
         
 A "category" column that contains only the category titles
+
+
+
 
  # Assign the category and subcategory values to category and subcategory columns.
 
